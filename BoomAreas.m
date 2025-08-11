@@ -20,4 +20,5 @@ for i = 1:nNodes
     end
 end
 
-Ixx = sum(B .* (nodes(:,2).^2));
+Ixx = engnum(sum(B .* (nodes(:,2).^2)));
+
