@@ -1,4 +1,4 @@
-function B = BoomAreas(nodes, connections)
+function [Ixx, B] = BoomAreas(nodes, connections)
 
 nNodes = length(nodes);
 B = zeros(nNodes,1);
@@ -19,3 +19,5 @@ for i = 1:nNodes
         B(i) = B(i) + ((l*t)/6)* (2 + sigma);
     end
 end
+
+Ixx = sum(B .* (nodes(:,2).^2));
